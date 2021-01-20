@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import __Template__ from './__Template__/__Template__'
+import __Template__ from './Home/Home'
 
 const App = () => {
   return (

@@ -1,7 +1,7 @@
 // Bareminimum React
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
-// import reportWebVitals from './reportWebVitals'
+import reportWebVitals from './reportWebVitals'
 
 // React Router
 import { BrowserRouter as Router } from 'react-router-dom'
@@ -10,7 +10,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store'
 
-import App from './modules/App'
+import App from './features/App'
 import './style/index.scss'
 
 ReactDOM.render(
@@ -24,4 +24,4 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-// reportWebVitals()
+reportWebVitals()
