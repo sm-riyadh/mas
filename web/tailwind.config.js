@@ -4,7 +4,7 @@ module.exports = {
   theme    : {
     extend : {
       gridTemplateColumns : {
-        main : 'minmax(20rem, 1fr) auto minmax(20rem, 1fr)',
+        main : 'minmax(20rem, 18vw) 64vw minmax(25rem, 18vw)',
       },
       height              : {
         header   : '4rem',

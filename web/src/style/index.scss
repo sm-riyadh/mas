@@ -1,8 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import '~normalize.css';
+@import 'tailwind-loves-sass';
+@import 'tailwind.css';
 @import '~material-icons/iconfont/material-icons.scss';
 
 * {
@@ -11,24 +8,147 @@
   padding: 0;
 
   user-select: none;
+  outline: none !important;
 }
+
 html {
   font-size: 10px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 body {
   font-size: 1.6rem;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
 }
-.material-icons {
+
+m-icon {
+  @include apply('material-icons');
   font-size: inherit;
   line-height: inherit;
 }
-.navigation {
-  .path {
-    @apply p-4;
+
+.nav {
+  .label {
+    @include apply('flex items-center px-2 py-1 pt-2 text-xs text-gray-400');
+  }
+
+  .tab {
+    @include apply('flex items-center text-sm px-3 py-1');
+
+    &:hover {
+      @include apply('bg-black bg-opacity-10');
+    }
+
+    &:active {
+      @include apply('bg-purple-500 bg-opacity-10');
+    }
+
+    m-icon {
+      @include apply('pr-2');
+    }
+
+    &.active {
+      @include apply('bg-purple-500 text-white');
+    }
+  }
+}
+
+.scrollbar {
+  @include apply('mx-1');
+
+  &::-webkit-scrollbar {
+    @include apply('w-2');
+  }
+
+  &::-webkit-scrollbar-track {
+    @include apply('my-1.5 bg-gray-300  bg-opacity-30 rounded');
+
+    &:hover {
+      @include apply('bg-opacity-80');
+    }
+    &:active {
+      @include apply('bg-opacity-80');
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @include apply('bg-gray-800 bg-opacity-70 rounded');
+
+    &:hover {
+      @include apply('bg-gray-800 bg-opacity-90 rounded');
+    }
+    &:active {
+      @include apply('bg-gray-800 bg-opacity-100 rounded');
+    }
+    // outline: 1px solid slategrey;
+  }
+}
+
+.table {
+  @include apply('bg-gray-100 rounded-md text-xs text-left');
+
+  thead {
+    tr {
+      th {
+        @include apply('px-2 py-2 bg-gray-300');
+
+        &:first-child {
+          @include apply('rounded-tl-md pl-3');
+        }
+        &:last-child {
+          @include apply('rounded-tr-md pr-3');
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        @include apply('px-2 py-1.5');
+
+        &:first-child {
+          @include apply('pl-3');
+        }
+        &:last-child {
+          @include apply('pr-3');
+        }
+      }
+    }
+  }
+}
+
+.table-sqr {
+  @include apply('bg-gray-100 text-xs text-left');
+
+  thead {
+    tr {
+      th {
+        @include apply('px-2 py-2 bg-gray-300');
+
+        &:first-child {
+          @include apply('pl-3');
+        }
+        &:last-child {
+          @include apply('pr-3');
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        @include apply('px-2 py-1.5');
+
+        &:first-child {
+          @include apply('pl-3');
+        }
+        &:last-child {
+          @include apply('pr-3');
+        }
+      }
+    }
   }
 }

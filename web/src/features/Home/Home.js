@@ -1,184 +1,88 @@
 import React, { Fragment } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { state } from '../../store/slice/__template__/__template__Slice'
-import { fetch__Template__ } from '../../store/slice/__template__/__template__Async'
+import { Switch, Route } from 'react-router-dom'
 
-const Home = () => {
-  const { __template__, status, error } = useSelector(state)
-  const dispatch = useDispatch()
+import Dashbord from '../Dashbord/Dashbord'
+import Journal from '../Journal/Journal'
+import JournalWidet from '../Journal/Widet'
 
+import Bank from '../Bank/Bank'
+import BankWidget from '../Bank/Widget'
+
+import Inventory from '../Inventory/Inventory'
+import InventoryWidget from '../Inventory/Widget'
+
+import Account from '../Account/Account'
+import AccountWidget from '../Account/Widget'
+
+import Expenses from '../Expenses/Expenses'
+import ExpensesWidget from '../Expenses/Widget'
+
+import Incomes from '../Incomes/Incomes'
+import IncomesWidget from '../Incomes/Widget'
+
+import Employee from '../Employee/Employee'
+import EmployeeWidget from '../Employee/Widget'
+
+import { Nav, Header } from '../../components'
+
+const App = () => {
   return (
     <Fragment>
-      <main className='grid grid-cols-main max-w-screen h-screen overflow-hidden'>
-        <aside className='auto-cols-max'>
-          <div className='h-full bg-green-500'>
-            <ul className='navigation'>
-              <li className='path flex align-middle text-lg p-2'>
-                <i className='material-icons text-lg'>dashboard</i> Dashboard
-              </li>
-            </ul>
+      <main className='grid h-screen overflow-hidden grid-cols-main max-w-screen'>
+        <aside className='z-20 auto-cols-max'>
+          <div className='h-full bg-gray-200'>
+            <Nav
+              tabs={[
+                { title: 'Dashboard', path: '/placeholder', icon: 'dashboard' },
+                { title: 'Admin Pannel', path: '/placeholder', icon: 'person' },
+                { title: 'Accounting', is_label: true },
+                { title: 'Journal', path: '/journal', icon: 'book' },
+                { title: 'Banks', path: '/bank', icon: 'request_quote' },
+                { title: 'Inventory', path: '/inventory', icon: 'request_quote' },
+                { title: 'Expenses', path: '/expenses', icon: 'request_quote' },
+                { title: 'Incomes', path: '/incomes', icon: 'request_quote' },
+                { title: 'Management', is_label: true },
+                { title: 'Employee', path: '/employee', icon: 'book' },
+                { title: 'Accounting', is_label: true },
+                { title: 'Chart of Accounts', path: '/placeholder', icon: 'request_quote' },
+                { title: 'Income Statement', path: '/placeholder', icon: 'request_quote' },
+              ]}
+            />
           </div>
         </aside>
-        <div className='auto-cols-max'>
-          <header className='h-header flex align-center p-3'>header</header>
-          <section className='h-content flex overflow-y-auto'>
-            <div className='m-4'>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod eius facilis aspernatur id nobis sapiente
-              assumenda quos doloremque neque velit labore aliquam vel dolorem quidem aut ipsa molestiae saepe, et dolor
-              quo voluptas voluptatibus quas. Exercitationem similique ipsum architecto veritatis maxime iste enim.
-              Architecto doloremque doloribus praesentium facere a ipsam recusandae sunt ducimus, voluptas pariatur
-              explicabo provident expedita dolores possimus consequuntur at labore eaque. Beatae dolores quia id
-              voluptatum sapiente, eveniet quibusdam doloribus deserunt quis aperiam labore officia ex odit officiis
-              nihil nobis facilis omnis, animi sequi numquam in voluptates ipsam eius error. Sapiente, nesciunt ipsa!
-              Quasi obcaecati facilis quidem officiis impedit odio ut a nihil dolorem perferendis ipsa, tempore odit
-              unde architecto praesentium temporibus saepe magni atque recusandae! At blanditiis, quasi laboriosam
-              molestias quis ducimus accusantium neque ratione, tenetur est debitis sunt eius odit tempora aliquam minus
-              quidem tempore assumenda illum unde velit! Repellat a totam corrupti, et provident in sequi quaerat at ut
-              consectetur, nobis recusandae, quod eum molestiae reiciendis sapiente eius ducimus ad laboriosam fugiat
-              nihil facilis dolores. Iusto dolorum commodi officia debitis velit deleniti fugit eos facilis quos, eaque
-              corrupti. Ut eveniet cumque aspernatur saepe nobis hic autem mollitia. Dolore expedita omnis maiores sit
-              perferendis veritatis? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod eius facilis
-              aspernatur id nobis sapiente assumenda quos doloremque neque velit labore aliquam vel dolorem quidem aut
-              ipsa molestiae saepe, et dolor quo voluptas voluptatibus quas. Exercitationem similique ipsum architecto
-              veritatis maxime iste enim. Architecto doloremque doloribus praesentium facere a ipsam recusandae sunt
-              ducimus, voluptas pariatur explicabo provident expedita dolores possimus consequuntur at labore eaque.
-              Beatae dolores quia id voluptatum sapiente, eveniet quibusdam doloribus deserunt quis aperiam labore
-              officia ex odit officiis nihil nobis facilis omnis, animi sequi numquam in voluptates ipsam eius error.
-              Sapiente, nesciunt ipsa! Quasi obcaecati facilis quidem officiis impedit odio ut a nihil dolorem
-              perferendis ipsa, tempore odit unde architecto praesentium temporibus saepe magni atque recusandae! At
-              blanditiis, quasi laboriosam molestias quis ducimus accusantium neque ratione, tenetur est debitis sunt
-              eius odit tempora aliquam minus quidem tempore assumenda illum unde velit! Repellat a totam corrupti, et
-              provident in sequi quaerat at ut consectetur, nobis recusandae, quod eum molestiae reiciendis sapiente
-              eius ducimus ad laboriosam fugiat nihil facilis dolores. Iusto dolorum commodi officia debitis velit
-              deleniti fugit eos facilis quos, eaque corrupti. Ut eveniet cumque aspernatur saepe nobis hic autem
-              mollitia. Dolore expedita omnis maiores sit perferendis veritatis? Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Quod eius facilis aspernatur id nobis sapiente assumenda quos doloremque neque velit
-              labore aliquam vel dolorem quidem aut ipsa molestiae saepe, et dolor quo voluptas voluptatibus quas.
-              Exercitationem similique ipsum architecto veritatis maxime iste enim. Architecto doloremque doloribus
-              praesentium facere a ipsam recusandae sunt ducimus, voluptas pariatur explicabo provident expedita dolores
-              possimus consequuntur at labore eaque. Beatae dolores quia id voluptatum sapiente, eveniet quibusdam
-              doloribus deserunt quis aperiam labore officia ex odit officiis nihil nobis facilis omnis, animi sequi
-              numquam in voluptates ipsam eius error. Sapiente, nesciunt ipsa! Quasi obcaecati facilis quidem officiis
-              impedit odio ut a nihil dolorem perferendis ipsa, tempore odit unde architecto praesentium temporibus
-              saepe magni atque recusandae! At blanditiis, quasi laboriosam molestias quis ducimus accusantium neque
-              ratione, tenetur est debitis sunt eius odit tempora aliquam minus quidem tempore assumenda illum unde
-              velit! Repellat a totam corrupti, et provident in sequi quaerat at ut consectetur, nobis recusandae, quod
-              eum molestiae reiciendis sapiente eius ducimus ad laboriosam fugiat nihil facilis dolores. Iusto dolorum
-              commodi officia debitis velit deleniti fugit eos facilis quos, eaque corrupti. Ut eveniet cumque
-              aspernatur saepe nobis hic autem mollitia. Dolore expedita omnis maiores sit perferendis veritatis? Lorem,
-              ipsum dolor sit amet consectetur adipisicing elit. Quod eius facilis aspernatur id nobis sapiente
-              assumenda quos doloremque neque velit labore aliquam vel dolorem quidem aut ipsa molestiae saepe, et dolor
-              quo voluptas voluptatibus quas. Exercitationem similique ipsum architecto veritatis maxime iste enim.
-              Architecto doloremque doloribus praesentium facere a ipsam recusandae sunt ducimus, voluptas pariatur
-              explicabo provident expedita dolores possimus consequuntur at labore eaque. Beatae dolores quia id
-              voluptatum sapiente, eveniet quibusdam doloribus deserunt quis aperiam labore officia ex odit officiis
-              nihil nobis facilis omnis, animi sequi numquam in voluptates ipsam eius error. Sapiente, nesciunt ipsa!
-              Quasi obcaecati facilis quidem officiis impedit odio ut a nihil dolorem perferendis ipsa, tempore odit
-              unde architecto praesentium temporibus saepe magni atque recusandae! At blanditiis, quasi laboriosam
-              molestias quis ducimus accusantium neque ratione, tenetur est debitis sunt eius odit tempora aliquam minus
-              quidem tempore assumenda illum unde velit! Repellat a totam corrupti, et provident in sequi quaerat at ut
-              consectetur, nobis recusandae, quod eum molestiae reiciendis sapiente eius ducimus ad laboriosam fugiat
-              nihil facilis dolores. Iusto dolorum commodi officia debitis velit deleniti fugit eos facilis quos, eaque
-              corrupti. Ut eveniet cumque aspernatur saepe nobis hic autem mollitia. Dolore expedita omnis maiores sit
-              perferendis veritatis? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod eius facilis
-              aspernatur id nobis sapiente assumenda quos doloremque neque velit labore aliquam vel dolorem quidem aut
-              ipsa molestiae saepe, et dolor quo voluptas voluptatibus quas. Exercitationem similique ipsum architecto
-              veritatis maxime iste enim. Architecto doloremque doloribus praesentium facere a ipsam recusandae sunt
-              ducimus, voluptas pariatur explicabo provident expedita dolores possimus consequuntur at labore eaque.
-              Beatae dolores quia id voluptatum sapiente, eveniet quibusdam doloribus deserunt quis aperiam labore
-              officia ex odit officiis nihil nobis facilis omnis, animi sequi numquam in voluptates ipsam eius error.
-              Sapiente, nesciunt ipsa! Quasi obcaecati facilis quidem officiis impedit odio ut a nihil dolorem
-              perferendis ipsa, tempore odit unde architecto praesentium temporibus saepe magni atque recusandae! At
-              blanditiis, quasi laboriosam molestias quis ducimus accusantium neque ratione, tenetur est debitis sunt
-              eius odit tempora aliquam minus quidem tempore assumenda illum unde velit! Repellat a totam corrupti, et
-              provident in sequi quaerat at ut consectetur, nobis recusandae, quod eum molestiae reiciendis sapiente
-              eius ducimus ad laboriosam fugiat nihil facilis dolores. Iusto dolorum commodi officia debitis velit
-              deleniti fugit eos facilis quos, eaque corrupti. Ut eveniet cumque aspernatur saepe nobis hic autem
-              mollitia. Dolore expedita omnis maiores sit perferendis veritatis? Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Quod eius facilis aspernatur id nobis sapiente assumenda quos doloremque neque velit
-              labore aliquam vel dolorem quidem aut ipsa molestiae saepe, et dolor quo voluptas voluptatibus quas.
-              Exercitationem similique ipsum architecto veritatis maxime iste enim. Architecto doloremque doloribus
-              praesentium facere a ipsam recusandae sunt ducimus, voluptas pariatur explicabo provident expedita dolores
-              possimus consequuntur at labore eaque. Beatae dolores quia id voluptatum sapiente, eveniet quibusdam
-              doloribus deserunt quis aperiam labore officia ex odit officiis nihil nobis facilis omnis, animi sequi
-              numquam in voluptates ipsam eius error. Sapiente, nesciunt ipsa! Quasi obcaecati facilis quidem officiis
-              impedit odio ut a nihil dolorem perferendis ipsa, tempore odit unde architecto praesentium temporibus
-              saepe magni atque recusandae! At blanditiis, quasi laboriosam molestias quis ducimus accusantium neque
-              ratione, tenetur est debitis sunt eius odit tempora aliquam minus quidem tempore assumenda illum unde
-              velit! Repellat a totam corrupti, et provident in sequi quaerat at ut consectetur, nobis recusandae, quod
-              eum molestiae reiciendis sapiente eius ducimus ad laboriosam fugiat nihil facilis dolores. Iusto dolorum
-              commodi officia debitis velit deleniti fugit eos facilis quos, eaque corrupti. Ut eveniet cumque
-              aspernatur saepe nobis hic autem mollitia. Dolore expedita omnis maiores sit perferendis veritatis? Lorem,
-              ipsum dolor sit amet consectetur adipisicing elit. Quod eius facilis aspernatur id nobis sapiente
-              assumenda quos doloremque neque velit labore aliquam vel dolorem quidem aut ipsa molestiae saepe, et dolor
-              quo voluptas voluptatibus quas. Exercitationem similique ipsum architecto veritatis maxime iste enim.
-              Architecto doloremque doloribus praesentium facere a ipsam recusandae sunt ducimus, voluptas pariatur
-              explicabo provident expedita dolores possimus consequuntur at labore eaque. Beatae dolores quia id
-              voluptatum sapiente, eveniet quibusdam doloribus deserunt quis aperiam labore officia ex odit officiis
-              nihil nobis facilis omnis, animi sequi numquam in voluptates ipsam eius error. Sapiente, nesciunt ipsa!
-              Quasi obcaecati facilis quidem officiis impedit odio ut a nihil dolorem perferendis ipsa, tempore odit
-              unde architecto praesentium temporibus saepe magni atque recusandae! At blanditiis, quasi laboriosam
-              molestias quis ducimus accusantium neque ratione, tenetur est debitis sunt eius odit tempora aliquam minus
-              quidem tempore assumenda illum unde velit! Repellat a totam corrupti, et provident in sequi quaerat at ut
-              consectetur, nobis recusandae, quod eum molestiae reiciendis sapiente eius ducimus ad laboriosam fugiat
-              nihil facilis dolores. Iusto dolorum commodi officia debitis velit deleniti fugit eos facilis quos, eaque
-              corrupti. Ut eveniet cumque aspernatur saepe nobis hic autem mollitia. Dolore expedita omnis maiores sit
-              perferendis veritatis? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod eius facilis
-              aspernatur id nobis sapiente assumenda quos doloremque neque velit labore aliquam vel dolorem quidem aut
-              ipsa molestiae saepe, et dolor quo voluptas voluptatibus quas. Exercitationem similique ipsum architecto
-              veritatis maxime iste enim. Architecto doloremque doloribus praesentium facere a ipsam recusandae sunt
-              ducimus, voluptas pariatur explicabo provident expedita dolores possimus consequuntur at labore eaque.
-              Beatae dolores quia id voluptatum sapiente, eveniet quibusdam doloribus deserunt quis aperiam labore
-              officia ex odit officiis nihil nobis facilis omnis, animi sequi numquam in voluptates ipsam eius error.
-              Sapiente, nesciunt ipsa! Quasi obcaecati facilis quidem officiis impedit odio ut a nihil dolorem
-              perferendis ipsa, tempore odit unde architecto praesentium temporibus saepe magni atque recusandae! At
-              blanditiis, quasi laboriosam molestias quis ducimus accusantium neque ratione, tenetur est debitis sunt
-              eius odit tempora aliquam minus quidem tempore assumenda illum unde velit! Repellat a totam corrupti, et
-              provident in sequi quaerat at ut consectetur, nobis recusandae, quod eum molestiae reiciendis sapiente
-              eius ducimus ad laboriosam fugiat nihil facilis dolores. Iusto dolorum commodi officia debitis velit
-              deleniti fugit eos facilis quos, eaque corrupti. Ut eveniet cumque aspernatur saepe nobis hic autem
-              mollitia. Dolore expedita omnis maiores sit perferendis veritatis? Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Quod eius facilis aspernatur id nobis sapiente assumenda quos doloremque neque velit
-              labore aliquam vel dolorem quidem aut ipsa molestiae saepe, et dolor quo voluptas voluptatibus quas.
-              Exercitationem similique ipsum architecto veritatis maxime iste enim. Architecto doloremque doloribus
-              praesentium facere a ipsam recusandae sunt ducimus, voluptas pariatur explicabo provident expedita dolores
-              possimus consequuntur at labore eaque. Beatae dolores quia id voluptatum sapiente, eveniet quibusdam
-              doloribus deserunt quis aperiam labore officia ex odit officiis nihil nobis facilis omnis, animi sequi
-              numquam in voluptates ipsam eius error. Sapiente, nesciunt ipsa! Quasi obcaecati facilis quidem officiis
-              impedit odio ut a nihil dolorem perferendis ipsa, tempore odit unde architecto praesentium temporibus
-              saepe magni atque recusandae! At blanditiis, quasi laboriosam molestias quis ducimus accusantium neque
-              ratione, tenetur est debitis sunt eius odit tempora aliquam minus quidem tempore assumenda illum unde
-              velit! Repellat a totam corrupti, et provident in sequi quaerat at ut consectetur, nobis recusandae, quod
-              eum molestiae reiciendis sapiente eius ducimus ad laboriosam fugiat nihil facilis dolores. Iusto dolorum
-              commodi officia debitis velit deleniti fugit eos facilis quos, eaque corrupti. Ut eveniet cumque
-              aspernatur saepe nobis hic autem mollitia. Dolore expedita omnis maiores sit perferendis veritatis? Lorem,
-              ipsum dolor sit amet consectetur adipisicing elit. Quod eius facilis aspernatur id nobis sapiente
-              assumenda quos doloremque neque velit labore aliquam vel dolorem quidem aut ipsa molestiae saepe, et dolor
-              quo voluptas voluptatibus quas. Exercitationem similique ipsum architecto veritatis maxime iste enim.
-              Architecto doloremque doloribus praesentium facere a ipsam recusandae sunt ducimus, voluptas pariatur
-              explicabo provident expedita dolores possimus consequuntur at labore eaque. Beatae dolores quia id
-              voluptatum sapiente, eveniet quibusdam doloribus deserunt quis aperiam labore officia ex odit officiis
-              nihil nobis facilis omnis, animi sequi numquam in voluptates ipsam eius error. Sapiente, nesciunt ipsa!
-              Quasi obcaecati facilis quidem officiis impedit odio ut a nihil dolorem perferendis ipsa, tempore odit
-              unde architecto praesentium temporibus saepe magni atque recusandae! At blanditiis, quasi laboriosam
-              molestias quis ducimus accusantium neque ratione, tenetur est debitis sunt eius odit tempora aliquam minus
-              quidem tempore assumenda illum unde velit! Repellat a totam corrupti, et provident in sequi quaerat at ut
-              consectetur, nobis recusandae, quod eum molestiae reiciendis sapiente eius ducimus ad laboriosam fugiat
-              nihil facilis dolores. Iusto dolorum commodi officia debitis velit deleniti fugit eos facilis quos, eaque
-              corrupti. Ut eveniet cumque aspernatur saepe nobis hic autem mollitia. Dolore expedita omnis maiores sit
-              perferendis veritatis?
-            </div>
+        <div className='bg-gray-100 auto-cols-max'>
+          <Header />
+          <section className='p-3 overflow-y-auto scrollbar h-content'>
+            <Switch>
+              <Route path='/' exact component={Dashbord} />
+              <Route path='/dashbord' component={Dashbord} />
+              <Route path='/journal' component={Journal} />
+              <Route path='/bank' component={Bank} />
+              <Route path='/inventory' component={Inventory} />
+              <Route path='/expenses' component={Expenses} />
+              <Route path='/incomes' component={Incomes} />
+              <Route path='/employee' component={Employee} />
+              <Route path='/coa' component={Account} />
+              <Route path='/placeholder'>
+                <h2>coming soon...</h2>
+              </Route>
+            </Switch>
           </section>
         </div>
-        <aside className='auto-cols-max'>
-          <div className='h-full bg-green-500 p-3 '>
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipisicing</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipisicing</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipisicing</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipisicing</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipisicing</li>
-            </ul>
+        <aside className='z-20 auto-cols-max'>
+          <div className='h-full bg-gray-200'>
+            <Switch>
+              <Route path='/journal' component={JournalWidet} />
+              <Route path='/bank' component={BankWidget} />
+              <Route path='/inventory' component={InventoryWidget} />
+              <Route path='/coa' component={AccountWidget} />
+              <Route path='/expenses' component={ExpensesWidget} />
+              <Route path='/incomes' component={IncomesWidget} />
+              <Route path='/employee' component={EmployeeWidget} />
+              <Route path='/placeholder'>
+                <h2>coming soon...</h2>
+              </Route>
+            </Switch>
           </div>
         </aside>
       </main>
@@ -186,4 +90,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default App
