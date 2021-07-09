@@ -1,0 +1,39 @@
+{
+  "name": "mcalais-server",
+  "version": "1.0.0",
+  "description": "server",
+  "author": "Cratobi",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "date-fns": "^2.22.1",
+    "dateformat": "^4.5.1",
+    "express": "^4.17.1",
+    "indian-number-format": "^1.0.4",
+    "mongodb-client-encryption": "^1.2.6",
+    "mongoose": "^5.13.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.9",
+    "socket.io": "^4.1.2",
+    "validator": "^13.6.0"
+  },
+  "scripts": {
+    "start": "nodemon --inspect --no-deprecation dev_build",
+    "compile": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "eslint": "^7.29.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "foreman": "^3.0.1",
+    "webpack": "^5.42.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-merge": "^5.8.0"
+  }
+}
