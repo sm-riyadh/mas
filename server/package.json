@@ -1,29 +1,18 @@
 {
-  "name": "mcalais-server",
-  "version": "1.0.0",
-  "description": "server",
+  "name": "mas_server",
+  "version": "0.1.0",
+  "description": "Marina Construction's Accounting Software Server",
+  "main": "src/index.js",
+  "repository": "https://github.com/Cratobi/mas",
   "author": "Cratobi",
-  "private": true,
   "license": "MIT",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "date-fns": "^2.22.1",
-    "dateformat": "^4.5.1",
-    "express": "^4.17.1",
-    "indian-number-format": "^1.0.4",
-    "mongodb-client-encryption": "^1.2.6",
-    "mongoose": "^5.13.0",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.9",
-    "socket.io": "^4.1.2",
-    "validator": "^13.6.0"
-  },
+  "private": true,
   "scripts": {
     "start": "nodemon --inspect --no-deprecation dev_build",
     "compile": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
-  "devDependencies": {
+  "dependencies": {
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "eslint": "^7.29.0",
     "eslint-config-standard": "^16.0.3",
@@ -35,5 +24,9 @@
     "webpack": "^5.42.0",
     "webpack-cli": "^4.7.2",
     "webpack-merge": "^5.8.0"
+  },
+  "browserslist": {
+    "production": [ "Node.js v16.4.2" ],
+    "development": [ "Node.js v16.4.2" ]
   }
 }

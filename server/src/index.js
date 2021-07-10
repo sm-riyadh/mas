@@ -8,6 +8,7 @@ import { host, port } from './config'
 
 // Routes
 import journal from './routes/journal'
+
 import account from './routes/account'
 import branch from './routes/branch'
 import hierarchy from './routes/hierarchy'
