@@ -1,8 +1,12 @@
 {
-  "name": "client",
+  "name": "mas_client",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Marina Construction's Accounting Software Client",
+  "main": "src/index.js",
+  "repository": "https://github.com/Cratobi/mas",
+  "author": "Cratobi",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "start": "craco start",
     "build": "craco build",
